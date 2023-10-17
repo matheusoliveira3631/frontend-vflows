@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Produto/Cliente</title>
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--StyleGuide Fluig/Bootstrap-->
+    <link rel='stylesheet' href='src/css/fluig-style-guide.min.css'>
+    <!--css para ajuste fino de detalhes-->
+    <link rel="stylesheet" href="src/css/index.css">
+</head>
+<body>
+    <div class='fluig-style-guide '>
+        <h1 class="text-center text-uppercase">Cadastro Fornecedor/Produto</h1>
+        <form class="form-horizontal fs-xx-huge-padding-horizontal" role="form" id="form-dados">
+            <p class="fs-bg-info fs-sm-padding " style="border-top-right-radius: 7px; border-top-left-radius: 7px;">Dados do Fornecedor</p>
+        
+            <section id="dados-fornecedor" class="fs-display-flex fs-flex-direction-column fs-align-items-center fs-justify-content-center fs-sm-padding fs-no-border-top">
+            <div class="fs-full-width fs-display-flex">
+                <div class="form-group col-sm-8">
+                    <label for="rSocial">Razão Social</label>
+                    <input type="text" class="form-control" id="rSocial" placeholder="..." required>
+                </div>
+                <div class="form-group col-sm-5 fs-sm-margin-left ">
+                    <label for="cnpj">CNPJ</label>
+                    <input type="number" class="form-control" id="cnpj" placeholder="...">
+                </div>
+            </div>
+            
+            <div class="fs-full-width fs-display-flex">
+                <div class="form-group col-sm-8">
+                    <label for="nome-fantasia">Nome Fantasia</label>
+                    <input type="text" class="form-control" id="nome-fantasia" placeholder="..." required>
+                </div>
+                <div class="form-group col-sm-5 fs-sm-margin-left ">
+                    <label for="inscricao-estadual">Inscrição Estadual</label>
+                    <input type="text" class="form-control" id="inscricao-estadual" placeholder="...">
+                </div>
+            </div>
+            
+            <div class="fs-full-width fs-display-flex">
+                <div class="form-group col-sm-5">
+                    <label for="cep">CEP</label>
+                    <input type="number" class="form-control" id="cep" placeholder="..." required>
+                </div>
+                <!--col-sm-offset não funcionou-->
+                <div class="col-sm-3 fs-md-margin-left"></div>
+                <div class="form-group col-sm-5 ">
+                    <label for="inscricao-estadual">Inscrição Municipal</label>
+                    <input type="text" class="form-control" id="inscricao-estadual" placeholder="...">
+                </div>
+            </div>
+            
+            <div class="fs-full-width fs-display-flex">
+                <div class="form-group col-sm-8">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" placeholder="..." required>
+                </div>
+                <div class="form-group col-sm-5 fs-sm-margin-left ">
+                    <label for="numero-endereco">Número</label>
+                    <input type="text" class="form-control" id="numero-endereco" placeholder="...">
+                </div>
+            </div>
+            
+            <div class="form-group col-sm-13 fs-full-width">
+                <label for="complemento">Complemento</label>
+                <input type="text" class="form-control" id="complemento" placeholder="..." required>
+            </div>
+            
+            <div class="fs-full-width fs-display-flex">
+                <div class="form-group col-sm-5">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" placeholder="..." required>
+                </div>
+                <div class="form-group col-sm-5 fs-sm-margin-left ">
+                    <label for="municipio">Município</label>
+                    <input type="text" class="form-control" id="municipio" placeholder="...">
+                </div>
+                <div class="form-group col-sm-5 fs-sm-margin-left ">
+                    <label for="estado">Estado</label>
+                    <input type="text" class="form-control" id="estado" placeholder="...">
+                </div>
+            </div>
+
+            <div class="fs-full-width fs-display-flex">
+                <div class="form-group col-sm-6">
+                    <label for="nome-contato">Nome da pessoa de contato</label>
+                    <input type="text" class="form-control" id="nome-contato" placeholder="..." required>
+                </div>
+                <div class="form-group col-sm-4 fs-sm-margin-left ">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control" id="telefone" placeholder="...">
+                </div>
+                <div class="form-group col-sm-5 fs-sm-margin-left ">
+                    <label for="email">E-mail</label>
+                    <input type="text" class="form-control" id="email" placeholder="...">
+                </div>
+            </div>
+            
+            </section>
+
+            <p class="fs-bg-info fs-sm-padding fs-md-margin-top " style="border-top-right-radius: 7px; border-top-left-radius: 7px;">Produtos</p>
+        
+            <section id="produtos" class="fs-display-flex fs-flex-direction-column fs-align-items-center fs-justify-content-center fs-sm-padding fs-no-border-top">
+                    <p class="fs-md-margin-vertical">Sem produtos adicionados</p>
+                <p class="btn btn-success">Adicionar produto</p>
+            </section>
+
+            <p class="fs-bg-info fs-sm-padding fs-md-margin-top " style="border-top-right-radius: 7px; border-top-left-radius: 7px;">Anexos</p>
+
+
+            <section id="anexos" class="fs-display-flex fs-flex-direction-column fs-align-items-center fs-justify-content-center fs-sm-padding fs-no-border-top">
+                <p class="fs-md-margin-vertical">Sem anexos adicionados</p>
+
+            <p class="btn btn-success">Incluir anexo</p>
+        </section>
+
+        <p class="btn btn-success fs-full-width fs-md-margin-vertical">Salvar Fornecedor</p>
+
+        </form>
+
+    </div>
+</body>
+</html>
