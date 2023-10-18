@@ -14,7 +14,7 @@ const produtoHTML = `
             <div class="fs-full-width fs-display-flex">
                 <div class="form-group col-sm-4">
                     <label for="unidade">UND. Medida</label>
-                    <select class="form-control" id="unidade">
+                    <select class="form-control" id="unidade" required>
                         <option value="litros">Litro</option>
                         <option value="kg">Kilogramas</option>
                         <option value="unidades">Unidades</option>

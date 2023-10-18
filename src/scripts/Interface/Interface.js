@@ -1,6 +1,7 @@
 import { gerarProduto } from "./Componentes/produto.js";
 import { gerarAnexo } from "./Componentes/Anexo.js";
 import { uploadArquivo } from "../Services/Upload.js";
+import { validarFornecedor } from "../Services/Validar.js";
 
 $("#adicionar-produto").on("click", () => {
     let nProduto = $(".produto-container").length + 1;
@@ -27,6 +28,10 @@ $("#adicionar-anexo").on("click", () => {
 });
 
 $("#input-anexo").on("change", (e) => {
+    if($(".anexo").length==0)
+    {
+        $("#sem-anexo").remove();
+    }
     const {clickable, link} = uploadArquivo(e.target);
     $(clickable).append(`<img src="src/assets/olho-aberto.png" class="btn fs-bg-info fs-md-margin-right excluir-produto" style="height: 30px;">`)
     let anexo = gerarAnexo($(".anexo").length + 1);
@@ -35,6 +40,10 @@ $("#input-anexo").on("change", (e) => {
         removerAnexo(e.target.parentElement, link);
     };
     $("#anexos-main").append(anexo);
+});
+
+$("#salvar").on("click", () => {
+    validarFornecedor();
 });
 
 function valorTotal(elemento)
