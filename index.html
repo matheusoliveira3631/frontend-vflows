@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group col-sm-5 fs-sm-margin-left ">
                     <label for="cnpj">CNPJ</label>
-                    <input type="number" class="form-control" id="cnpj" placeholder="...">
+                    <input type="text" maxlength="18" class="form-control" id="cnpj" placeholder="..." required>
                 </div>
             </div>
             
@@ -43,7 +43,7 @@
             <div class="fs-full-width fs-display-flex">
                 <div class="form-group col-sm-5">
                     <label for="cep">CEP</label>
-                    <input type="number" class="form-control" id="cep" placeholder="..." required>
+                    <input type="text" maxlength="9" class="form-control" id="cep" placeholder="..." required>
                 </div>
                 <!--col-sm-offset não funcionou-->
                 <div class="col-sm-3 fs-md-margin-left"></div>
@@ -55,12 +55,12 @@
             
             <div class="fs-full-width fs-display-flex">
                 <div class="form-group col-sm-8">
-                    <label for="endereco">Endereço</label>
-                    <input type="text" class="form-control" id="endereco" placeholder="..." required>
+                    <label for="rua">Endereço</label>
+                    <input type="text" class="form-control" id="rua" placeholder="..." required>
                 </div>
                 <div class="form-group col-sm-5 fs-sm-margin-left ">
                     <label for="numero-endereco">Número</label>
-                    <input type="text" class="form-control" id="numero-endereco" placeholder="...">
+                    <input type="text" class="form-control" id="numero-endereco" placeholder="..." required>
                 </div>
             </div>
             
@@ -76,11 +76,11 @@
                 </div>
                 <div class="form-group col-sm-5 fs-sm-margin-left ">
                     <label for="municipio">Município</label>
-                    <input type="text" class="form-control" id="municipio" placeholder="...">
+                    <input type="text" class="form-control" id="municipio" placeholder="..." required>
                 </div>
                 <div class="form-group col-sm-5 fs-sm-margin-left ">
                     <label for="estado">Estado</label>
-                    <input type="text" class="form-control" id="estado" placeholder="...">
+                    <input type="text" class="form-control" id="estado" placeholder="..." required>
                 </div>
             </div>
 
@@ -91,11 +91,11 @@
                 </div>
                 <div class="form-group col-sm-4 fs-sm-margin-left ">
                     <label for="telefone">Telefone</label>
-                    <input type="text" class="form-control" id="telefone" placeholder="...">
+                    <input type="text" class="form-control" id="telefone" placeholder="..." required>
                 </div>
                 <div class="form-group col-sm-5 fs-sm-margin-left ">
                     <label for="email">E-mail</label>
-                    <input type="text" class="form-control" id="email" placeholder="...">
+                    <input type="email" class="form-control" id="email" placeholder="..." required>
                 </div>
             </div>
             
@@ -104,7 +104,8 @@
             <p class="fs-bg-info fs-sm-padding fs-md-margin-top " style="border-top-right-radius: 7px; border-top-left-radius: 7px;">Produtos</p>
         
             <section id="produtos" class="fs-display-flex fs-flex-direction-column fs-align-items-center fs-justify-content-center fs-sm-padding fs-no-border-top">
-                    <p class="fs-md-margin-vertical">Sem produtos adicionados</p>
+                <p class="fs-md-margin-vertical">Não há produtos cadastrados</p>
+
                 <p class="btn btn-success">Adicionar produto</p>
             </section>
 
@@ -112,8 +113,10 @@
 
 
             <section id="anexos" class="fs-display-flex fs-flex-direction-column fs-align-items-center fs-justify-content-center fs-sm-padding fs-no-border-top">
-                <p class="fs-md-margin-vertical">Sem anexos adicionados</p>
-
+                <div class='texto-borda fs-md-margin-vertical'>
+                    <div class="header">Itens</div>
+                    Sem anexos cadastrados
+                </div>
             <p class="btn btn-success">Incluir anexo</p>
         </section>
 
@@ -123,4 +126,5 @@
 
     </div>
 </body>
+<script type="module" src="src/scripts/Mascaras/cep.js"></script>
 </html>
