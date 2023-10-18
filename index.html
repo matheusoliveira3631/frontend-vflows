@@ -103,10 +103,12 @@
 
             <p class="fs-bg-info fs-sm-padding fs-md-margin-top " style="border-top-right-radius: 7px; border-top-left-radius: 7px;">Produtos</p>
         
-            <section id="produtos" class="fs-display-flex fs-flex-direction-column fs-align-items-center fs-justify-content-center fs-sm-padding fs-no-border-top">
-                <p class="fs-md-margin-vertical">Não há produtos cadastrados</p>
+            <section id="produtos" class="fs-display-flex fs-flex-direction-column fs-align-items-center fs-justify-content-center fs-md-padding fs-no-border-top">
+                <p class="fs-md-margin-vertical" id="sem-produtos">Não há produtos cadastrados</p>
+                <div id="produtos-main">
 
-                <p class="btn btn-success">Adicionar produto</p>
+                </div>
+                <p class="btn btn-success" id="adicionar-produto">Adicionar produto</p>
             </section>
 
             <p class="fs-bg-info fs-sm-padding fs-md-margin-top " style="border-top-right-radius: 7px; border-top-left-radius: 7px;">Anexos</p>
@@ -118,7 +120,7 @@
                     Sem anexos cadastrados
                 </div>
             <p class="btn btn-success">Incluir anexo</p>
-        </section>
+            </section>
 
         <p class="btn btn-success fs-full-width fs-md-margin-vertical">Salvar Fornecedor</p>
 
@@ -126,5 +128,8 @@
 
     </div>
 </body>
+<script src="https://style.fluig.com/js/fluig-style-guide-docs-index.min.js"></script>
 <script type="module" src="src/scripts/Mascaras/cep.js"></script>
+<script type="module" src="src/scripts/Interface/Interface.js"></script>
+
 </html>
