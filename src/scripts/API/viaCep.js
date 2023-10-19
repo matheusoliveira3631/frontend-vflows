@@ -9,7 +9,13 @@ function completaCep(cep) {
         dataType: 'json',
         success: function (data) {
           if (data.erro) {
-            console.log("CEP invalido")
+            FLUIGC.toast({
+              title: 'Cep inválido',
+              message: 'Por favor digite um cep válido',
+              type: 'warning',
+              timeout: 'fast'
+              });
+              $("#cep").val("");
           } else {
             console.log(data);
             $("#rua").val(data.logradouro);

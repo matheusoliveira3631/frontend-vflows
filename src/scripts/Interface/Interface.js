@@ -1,7 +1,7 @@
 import { gerarProduto } from "./Componentes/produto.js";
 import { gerarAnexo } from "./Componentes/Anexo.js";
 import { uploadArquivo } from "../Services/Upload.js";
-import { validarFornecedor } from "../Services/Validar.js";
+import { validarFornecedor, validaCNPJ } from "../Services/Validar.js";
 
 $("#adicionar-produto").on("click", () => {
     let nProduto = $(".produto-container").length + 1;
@@ -40,6 +40,24 @@ $("#input-anexo").on("change", (e) => {
         removerAnexo(e.target.parentElement, link);
     };
     $("#anexos-main").append(anexo);
+});
+
+//validar cnpj
+$("#cnpj").on("input", (e) => {
+    let cnpj = e.target.value;
+    if(cnpj.length == 18)
+    {
+        if(!validaCNPJ(cnpj))
+        {
+            $("#cnpj").parent().addClass("has-error");
+            $("#erro-cnpj").fadeToggle();
+            setTimeout(() => {
+                $("#cnpj").val("")
+                $("#cnpj").parent().removeClass("has-error");
+                $("#erro-cnpj").fadeToggle();
+            }, 2000);
+        }
+    }
 });
 
 $("#salvar").on("click", () => {
