@@ -6,7 +6,7 @@ const anexoHTML = `
     <p>Documento anexo 1</p>
 `
 
-function gerarAnexo(nAnexo)
+export function gerarAnexo(nAnexo)
 {
     let html = anexoHTML;
     html = html.replace(/Documento anexo 1/g, `Documento anexo ${nAnexo}`);
@@ -16,4 +16,3 @@ function gerarAnexo(nAnexo)
     return elemento;
 }
 
-export { gerarAnexo }

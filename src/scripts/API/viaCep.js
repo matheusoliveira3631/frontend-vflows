@@ -1,6 +1,6 @@
 
 //Busca o cep utilizando a API do viaCep e preenche os campos
-function completaCep(cep) {
+export function completaCep(cep) {
     var url = 'https://viacep.com.br/ws/' + cep + '/json/';
 
       $.ajax({
@@ -32,5 +32,3 @@ function completaCep(cep) {
       });
 }
 
-
-export { completaCep };

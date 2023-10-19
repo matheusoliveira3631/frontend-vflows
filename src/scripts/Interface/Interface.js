@@ -2,7 +2,14 @@ import { gerarProduto } from "./Componentes/produto.js";
 import { gerarAnexo } from "./Componentes/Anexo.js";
 import { uploadArquivo } from "../Services/Upload.js";
 import { validarFornecedor, validaCNPJ } from "../Services/Validar.js";
+import { salvarDados } from "../Services/salvarDados.js";
 
+
+/**
+ * Listener para o botão de adicionar produto
+ * gera um componente de produto e adiciona ao DOM.
+ * adiciona listeners para os campos de quantidade e valor unitário. para cálculo do valor total.
+ */
 $("#adicionar-produto").on("click", () => {
     let nProduto = $(".produto-container").length + 1;
     if(nProduto==1)
@@ -27,6 +34,11 @@ $("#adicionar-anexo").on("click", () => {
     $("#input-anexo").trigger("click");
 });
 
+/**
+ * Listener para o input de anexo.
+ * gera um componente de anexo e adiciona ao DOM.
+ * adiciona listener para o botão de excluir anexo.
+ */
 $("#input-anexo").on("change", (e) => {
     if($(".anexo").length==0)
     {
@@ -60,10 +72,32 @@ $("#cnpj").on("input", (e) => {
     }
 });
 
+/**
+ * Listener para o botão de salvar dados
+ * caso o fornecedor seja válido, salva os dados em um arquivo JSON e 
+ * faz o download do mesmo.
+*/
 $("#salvar").on("click", () => {
-    validarFornecedor();
+    if(validarFornecedor())
+    {
+        const dados = salvarDados();
+        console.log(dados)
+        const a = document.createElement("a");
+        const file = new Blob([JSON.stringify(dados)], { type: "text/plain" });
+        a.href = URL.createObjectURL(file);
+        a.download = "dados.json";
+        a.click();
+          
+  
+          
+    } 
 });
 
+/**
+ * Função para calcular o valor total de um produto.
+ * com base na quantidade e no valor unitário.
+ * @param {Element} elemento - O elemento HTML do produto a ser calculado.
+ * */
 function valorTotal(elemento)
 {
     let quantidade = $(elemento).find("#estoque").val();
@@ -72,6 +106,10 @@ function valorTotal(elemento)
     $(elemento).find("#v-total").val(valorTotal);
 }
 
+/**
+ * Função que remove um produto e todos os seus dados.
+ * @param {Function} callback - Função a ser executada após a confirmação da remoção.
+ */
 function removerProduto(callback)
 {
     FLUIGC.message.confirm({
@@ -86,6 +124,11 @@ function removerProduto(callback)
     });
 }
 
+/**
+ * Função que remove um anexo e revoga a URL do link correspondente.
+ * @param {Element} elemento - O elemento HTML do anexo a ser removido.
+ * @param {string} link - A URL do link correspondente ao anexo.
+ */
 function removerAnexo(elemento, link)
 {
     FLUIGC.message.confirm({

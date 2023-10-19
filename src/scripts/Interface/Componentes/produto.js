@@ -4,7 +4,7 @@ const produtoHTML = `
     <div class='texto-borda fs-md-margin-vertical fs-display-flex '>
         <div class="header">Produto - 1 </div>
         <img src="src/assets/caixa.png" class="fs-height-100 fs-md-margin fs-md-padding" style="align-self: center; background-color: cornflowerblue; border-radius: 50%;">
-            <section class="fs-display-flex fs-flex-direction-column fs-sm-padding fs-no-border-top">
+            <section class="fs-display-flex fs-flex-direction-column fs-sm-padding fs-no-border-top dados-produto">
             
             <div class="form-group col-sm-12">
                 <label for="nome">Produto</label>
@@ -41,7 +41,7 @@ const produtoHTML = `
     </div>
 `
 
-function gerarProduto(nProduto){
+export function gerarProduto(nProduto){
     let html = produtoHTML;
     html = html.replace(/Produto - 1/g, `Produto - ${nProduto}`);
     const elemento = document.createElement("div");
@@ -50,4 +50,3 @@ function gerarProduto(nProduto){
     return elemento;
 }
 
-export { gerarProduto };

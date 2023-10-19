@@ -1,4 +1,4 @@
-function uploadArquivo()
+export function uploadArquivo()
 {
     const input = document.getElementById('input-anexo');
     const file = input.files[0];
@@ -15,6 +15,7 @@ function uploadArquivo()
             link = URL.createObjectURL(blob);
             clickable.href = link;
             clickable.download = file.name;
+            clickable.classList.add("link-anexo");
         };
         reader.readAsArrayBuffer(file);
         return {clickable, link};
@@ -22,4 +23,3 @@ function uploadArquivo()
 }
 
 
-export { uploadArquivo }
