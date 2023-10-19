@@ -87,11 +87,24 @@ $("#salvar").on("click", () => {
         a.href = URL.createObjectURL(file);
         a.download = "dados.json";
         a.click();
-          
-  
+        FLUIGC.modal({
+            title: "Dados salvos com sucesso!",
+            content: `
+                <h3>Razão social: ${$("#rSocial").val()}</h2>
+                <br>
+                <h3>CNPJ: ${$("#cnpj").val()}</h2>
+                <br>
+                <h3>Produtos cadastrados: ${$(".produto-container").length}</h2>
+            `,
+            actions: [{
+                'label': 'Fechar',
+                'autoClose': true
+            }]
+        }); 
           
     } 
 });
+
 
 /**
  * Função para calcular o valor total de um produto.

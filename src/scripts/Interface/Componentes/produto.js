@@ -23,12 +23,12 @@ const produtoHTML = `
                 
                 <div class="form-group col-sm-4 fs-sm-margin-left ">
                     <label for="estoque">QTDE. em estoque</label>
-                    <input type="number" value="0" class="form-control estoque" id="estoque" placeholder="..." required>
+                    <input type="number" value="0" class="form-control estoque" min="0" id="estoque" placeholder="..." required>
                 </div>
                 
                 <div class="form-group col-sm-4 fs-sm-margin-left ">
                     <label for="v-unitario">Valor unitário</label>
-                    <input type="number" value="0" class="form-control v-unitario" id="v-unitario" placeholder="..." required>
+                    <input type="number" value="0" class="form-control v-unitario" min="0" id="v-unitario" placeholder="..." required>
                 </div>
                 
                 <div class="form-group col-sm-4 fs-sm-margin-left ">
